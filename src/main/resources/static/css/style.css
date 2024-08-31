@@ -1,0 +1,22 @@
+body{
+    background: #e4e9e2;
+}
+
+.titulo {
+    text-align: left;
+    font-size: 4rem;
+    font-family: 'Rouge Script', serif;
+    padding: 1rem;
+    color: #625a49;
+}
+
+.thInvitacion{
+    color: #625a49 !important;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+}
+
+.tdInvitacion{
+    color: #625a49 !important;
+    font-family: Poppins, sans-serif;
+}
