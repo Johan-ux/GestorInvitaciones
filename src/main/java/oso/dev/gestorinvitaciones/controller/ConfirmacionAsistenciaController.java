@@ -11,6 +11,7 @@ import oso.dev.gestorinvitaciones.service.AsistenciaService;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "https://cold-math-1702.bss.design/")
 @RequestMapping(value = "/api/asistencia", method = RequestMethod.POST)
 public class ConfirmacionAsistenciaController {
 
