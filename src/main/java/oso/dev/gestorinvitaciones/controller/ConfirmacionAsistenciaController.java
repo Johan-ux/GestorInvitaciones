@@ -21,7 +21,7 @@ public class ConfirmacionAsistenciaController {
 
             Asistencia asistencia = new Asistencia();
 
-            asistencia.setName(params.get("name"));
+            asistencia.setName(params.get("nameIv"));
             asistencia.setAsistencia("si".equals(params.get("asistencia")));
             asistencia.setMensajeOp(params.get("mensajeOp"));
 
