@@ -25,6 +25,8 @@
                 <tr>
                     <th class="thInvitacion" scope="col">Nombre</th>
                     <th class="thInvitacion" scope="col">Asistencia</th>
+                    <th class="thInvitacion" scope="col">Adultos</th>
+                    <th class="thInvitacion" scope="col">Niños</th>
                     <th class="thInvitacion" scope="col">Mensaje</th>
                 </tr>
                 </thead>
@@ -32,6 +34,8 @@
                 <tr th:each="asis : ${asistencia}">
                     <td class="tdInvitacion" th:text="${asis.name}"></td>
                     <td class="tdInvitacion" th:text="${asis.asistencia ? 'SI' : 'NO'}"></td>
+                    <td class="tdInvitacion" th:text="${asis.adult}"></td>
+                    <td class="tdInvitacion" th:text="${asis.kids}"></td>
                     <td class="tdInvitacion" th:text="${asis.mensajeOp}"></td>
                 </tr>
                 </tbody>
