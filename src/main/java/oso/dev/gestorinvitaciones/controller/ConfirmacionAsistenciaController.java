@@ -21,9 +21,12 @@ public class ConfirmacionAsistenciaController {
     public ResponseEntity<String> saveAsistencia(@RequestParam(required = false) Map<String, String> params) {
         if (!params.isEmpty()) {
             Asistencia asistencia = new Asistencia();
+
+            asistencia.setKids(params.get("kids"));
             asistencia.setName(params.get("nameIv"));
-            asistencia.setAsistencia("si".equals(params.get("asistencia")));
+            asistencia.setAdult(params.get("adult"));
             asistencia.setMensajeOp(params.get("mensajeOp"));
+            asistencia.setAsistencia("si".equals(params.get("asistencia")));
 
             asistenciaService.save(asistencia);
 

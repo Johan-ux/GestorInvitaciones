@@ -21,5 +21,9 @@ public class Asistencia implements Serializable {
 
     private boolean asistencia;
 
+    private String adult;
+
+    private String kids;
+
     private String mensajeOp;
 }
