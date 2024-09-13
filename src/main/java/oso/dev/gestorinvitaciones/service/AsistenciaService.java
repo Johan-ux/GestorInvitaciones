@@ -20,6 +20,10 @@ public class AsistenciaService {
         return asistenciaRepository.findAll();
     }
 
+    public void delete(String asistenciaId) {
+        asistenciaRepository.deleteById(asistenciaId);
+    }
+
     @Autowired
     public void setAsistenciaRepository(AsistenciaRepository asistenciaRepository) {
         this.asistenciaRepository = asistenciaRepository;
