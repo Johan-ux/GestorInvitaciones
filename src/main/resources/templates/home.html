@@ -47,8 +47,8 @@
                     <td class="tdInvitacion" th:text="${asistente.mensajeOp}"></td>
                     <td class="tdInvitacion">
                         <input type="hidden" th:value="${asistente.id}" th:id="|sendInput-${iterStat.count}|">
-                        <button type="button" class="btn" title="Eliminar" th:id="|sendButton-${iterStat.count}|"
-                                th:onclick="|javascript:deleteAsistente(${iterStat.count})|">
+                        <button type="button" class="btn" data-bs-toggle="modal"
+                                th:data-bs-target="|#deleteModal-${iterStat.count}|">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-person-x" viewBox="0 0 16 16">
                                 <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m.256 7a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
@@ -59,6 +59,27 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div th:each="asistente, iterStat : ${asistencia}" th:id="|deleteModal-${iterStat.count}|" class="modal fade"
+         tabindex="-1"
+         aria-labelledby="delete users" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Eliminar invitado</h1>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro que desea eliminar a [[${asistente.name}]]?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" title="Eliminar"
+                            th:onclick="|javascript:deleteAsistente(${iterStat.count})|">Eliminar
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </main>
